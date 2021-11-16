@@ -76,3 +76,12 @@ show different commit in vscode
 git diff [first_commit] [changes_commit]
 git diff [first_commit] HEAD
 ```
+reset index
+```
+```
+reset staged
+```
+```
+reset all
+```
+```
