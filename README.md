@@ -58,3 +58,7 @@ show log with graph
 ```
 git log --oneline --graph
 ```
+show detail commit
+```
+git show [hash]
+```
