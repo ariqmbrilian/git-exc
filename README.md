@@ -54,3 +54,7 @@ show log with one line
 ```
 git log --oneline
 ```
+show log with graph
+```
+git log --oneline --graph
+```
