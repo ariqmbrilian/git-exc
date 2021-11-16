@@ -34,3 +34,7 @@ commit staged file to permanently repository
 ```
 git commit -m "[message_name]"
 ```
+cancel adding file
+```
+git clean -f
+```
