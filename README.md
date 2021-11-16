@@ -68,6 +68,6 @@ git show HEAD
 ```
 compare commit
 ```
-git diff [first_hash] [second_hash]
-git diff [first_hash] HEAD
+git diff [first_commit] [changes_commit]
+git diff [first_commit] HEAD
 ```
