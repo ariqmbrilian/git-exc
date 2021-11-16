@@ -38,3 +38,7 @@ cancel adding file
 ```
 git clean -f
 ```
+restore changes
+```
+git restore [file_name]
+```
