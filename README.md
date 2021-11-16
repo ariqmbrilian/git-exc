@@ -46,3 +46,7 @@ cancel modified file in staged
 ```
 git restore --staged [file_name]
 ```
+show log
+```
+git log
+```
