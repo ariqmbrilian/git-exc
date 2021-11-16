@@ -8,8 +8,12 @@ set default editor git with vscode
 ```
 git config --global core.editor "code --wait"
 ```
-
+set default difftool
 ```
-
+git config --global diff.tool "default-difftool"
+git config --global difftool.default-difftool.cmd "code --wait --diff \$LOCAL \$REMOTE"
 ```
-This is tutorial
+show global config
+```
+git config --list --show-origin
+```
