@@ -66,3 +66,8 @@ show last changes
 ```
 git show HEAD
 ```
+compare commit
+```
+git diff [first_hash] [second_hash]
+git diff [first_hash] HEAD
+```
