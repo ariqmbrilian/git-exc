@@ -21,3 +21,7 @@ initialize working directory
 ```
 git init
 ```
+show status
+```
+git status
+```
