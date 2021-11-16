@@ -62,3 +62,7 @@ show detail commit
 ```
 git show [hash]
 ```
+show last changes
+```
+git show HEAD
+```
