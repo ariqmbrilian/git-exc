@@ -17,7 +17,7 @@ show global config
 ```
 git config --list --show-origin
 ```
-initialize repository
+initialize working directory
 ```
 git init
 ```
