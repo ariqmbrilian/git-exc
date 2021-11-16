@@ -38,7 +38,7 @@ cancel adding file
 ```
 git clean -f
 ```
-cancel modified
+cancel modified in working directory
 ```
 git restore [file_name]
 ```
