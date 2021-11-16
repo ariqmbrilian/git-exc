@@ -50,3 +50,7 @@ show log
 ```
 git log
 ```
+show log with one line
+```
+git log --oneline
+```
