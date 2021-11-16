@@ -42,3 +42,7 @@ cancel modified in working directory
 ```
 git restore [file_name]
 ```
+cancel modified file in staged
+```
+git restore --staged [file_name]
+```
