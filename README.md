@@ -30,3 +30,7 @@ add file to staged
 git add [file_name]
 git add .
 ```
+commit staged file to permanently repository
+```
+git commit -m "[message_name]"
+```
