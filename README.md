@@ -71,3 +71,8 @@ compare commit
 git diff [first_commit] [changes_commit]
 git diff [first_commit] HEAD
 ```
+show different commit in vscode
+```
+git diff [first_commit] [changes_commit]
+git diff [first_commit] HEAD
+```
