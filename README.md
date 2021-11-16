@@ -25,3 +25,8 @@ show status
 ```
 git status
 ```
+add file to staged
+```
+git add [file_name]
+git add .
+```
