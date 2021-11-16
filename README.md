@@ -17,3 +17,7 @@ show global config
 ```
 git config --list --show-origin
 ```
+initialize repository
+```
+git init
+```
