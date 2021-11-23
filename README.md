@@ -1,4 +1,4 @@
-# Git beginner
+# GIT self paced learning
 basic configuration
 ```
 git config --global user.name "[username]"
