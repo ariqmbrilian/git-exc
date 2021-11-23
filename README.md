@@ -1,4 +1,4 @@
-# GIT self paced learning
+# CHEAT SHEET
 basic configuration
 ```
 git config --global user.name "[username]"
