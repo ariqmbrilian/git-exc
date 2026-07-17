@@ -8,6 +8,8 @@
 - [Creating a Repository](#creating-a-repository)
 - [Basic Workflow](#basic-workflow)
 - [Branching](#branching)
+- [Rebase & Squash](#rebase--squash)
+- [Branching Strategies](#branching-strategies)
 - [Remote Repositories](#remote-repositories)
 - [Undoing Changes](#undoing-changes)
 - [Viewing History](#viewing-history)
@@ -291,6 +293,84 @@ git branch -m old-name new-name
 
 ---
 
+## Rebase & Squash
+
+### Rebase
+
+Rebase moves your branch's commits on top of another branch, rewriting them as
+new commits. Unlike merge, it produces a **linear history** with no merge commit.
+
+```bash
+# From your feature branch, replay its commits on top of main
+git checkout feature
+git rebase main
+
+# Continue after resolving conflicts
+git rebase --continue
+
+# Abort and go back to the pre-rebase state
+git rebase --abort
+```
+
+> ⚠️ Rebasing rewrites commit history — never rebase commits that have already
+> been pushed to a shared branch.
+
+| | Merge | Rebase |
+|--|-------|--------|
+| History | Preserved, adds a merge commit | Linear, rewrites commits |
+| Use when | Sharing a public branch | Cleaning up local history |
+
+### Squash
+
+Combine several commits into one.
+
+```bash
+# Merge a branch as a single staged change (no commit yet), then commit once
+git merge --squash feature
+git commit -m "feat: add complete feature"
+
+# Or squash interactively while rebasing (mark commits as 'squash'/'s')
+git rebase -i HEAD~3
+```
+
+---
+
+## Branching Strategies
+
+### Gitflow
+
+Multiple long-lived branches: `master`, `develop`, plus `feature/*`, `release/*`,
+`hotfix/*`.
+
+- `develop` branches off `master` for ongoing development.
+- Each new feature is a `feature/*` branch off `develop`, merged back to `develop`.
+- When ready, `develop` merges into a `release/*` branch. Bugs are fixed on the
+  release branch and merged back to `develop` so it stays up to date.
+- When the release is clean, merge into `master` and create a tag.
+- Production bug → `hotfix/*` branch off `master`, fixed, then merged into **both**
+  `master` and `develop`.
+
+Best for scheduled releases and multiple versions in flight.
+
+### Trunk-Based Development (TBD)
+
+One main branch (`main`). Short-lived feature branches (one person, a couple of
+days) flow back through pull-request code review and build automation.
+
+- Simple, fast delivery.
+- Requires mature practices: QA automation, code quality checks, unit tests,
+  security scanning, experienced engineers, pair programming.
+
+### Forking Workflow
+
+Popular for open source. Contributors don't have write access to the main repo.
+
+- Fork/clone the repository to your own account.
+- Push changes to your fork, then open a pull request to the main repository.
+- Maintainers review before merging.
+
+---
+
 ## Remote Repositories
 
 Remotes are versions of your repository hosted on the internet (e.g., GitHub, GitLab).
@@ -312,6 +392,25 @@ git remote remove origin
 
 # Rename a remote
 git remote rename origin upstream
+
+# Show a remote's URL
+git remote get-url origin
+```
+
+### Push Variations
+
+```bash
+# Push local branch to a differently-named remote branch
+git push origin main:dev
+
+# Push all local branches
+git push origin --all
+
+# List remote-tracking branches only
+git branch -r
+
+# Check out a remote branch into a new local branch
+git checkout -b dev origin/dev
 ```
 
 ### Fetch Changes
